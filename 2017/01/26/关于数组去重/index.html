@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="Keep Going">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LouieLiu">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="做练习的时候发现这样一道题
+Description:Your goal in this kata is to implement an difference function, which subtracts one list from another.It should remove all values from list a, which are present in list b.If a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于数组去重">
+<meta property="og:url" content="http://yoursite.com/2017/01/26/关于数组去重/index.html">
 <meta property="og:site_name" content="LouieLiu">
-<meta property="og:description" content="Keep Going">
+<meta property="og:description" content="做练习的时候发现这样一道题
+Description:Your goal in this kata is to implement an difference function, which subtracts one list from another.It should remove all values from list a, which are present in list b.If a">
+<meta property="og:updated_time" content="2017-01-26T08:53:12.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LouieLiu">
-<meta name="twitter:description" content="Keep Going">
+<meta name="twitter:title" content="关于数组去重">
+<meta name="twitter:description" content="做练习的时候发现这样一道题
+Description:Your goal in this kata is to implement an difference function, which subtracts one list from another.It should remove all values from list a, which are present in list b.If a">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/26/关于数组去重/"/>
 
 
 
 
 
-  <title> LouieLiu </title>
+  <title> 关于数组去重 | LouieLiu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,9 +160,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,9 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -284,10 +286,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/26/关于数组去重/" itemprop="url">
-                  关于数组去重
-                </a>
+                关于数组去重
               
             
           </h1>
@@ -348,9 +347,7 @@
       
 
       
-        
-          
-            <p>做练习的时候发现这样一道题</p>
+        <p>做练习的时候发现这样一道题</p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>Your goal in this kata is to implement an difference function, which subtracts one list from another.It should remove all values from list a, which are present in list b.If a value is present in b, all of its occurrences must be removed from the other:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">difference([<span class="number">1</span>,<span class="number">2</span>],[<span class="number">1</span>]) == [<span class="number">2</span>]</div><div class="line">difference([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>]) == [<span class="number">1</span>,<span class="number">3</span>]</div><div class="line">difference([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">3</span>]) == [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>]</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="comment">//your code</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>&emsp;&emsp;这道题本来没什么好说的就是除去第一个数组中所有包含的第二个参数中的元素 重点是最后一步的数组去重 其中第一步很容易解决<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  a = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> b.indexOf(x); &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -360,175 +357,62 @@
 <p>此方法的时间复杂度为O(n²);</p>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>若不考虑数组输出顺序 可以使用sort()先排序后过滤的方法；使用sort()排序后数组中相同元素会在相邻位置只需要比较相邻位置的值是否相等就可以做出判断 大致实现方法如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">	<span class="comment">//省略上述代码</span></div><div class="line">	a = a.sort().filter(<span class="function"><span class="keyword">function</span>(<span class="params">ele,index,array</span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> ele!==array[index - <span class="number">1</span>];</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/开篇/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="LiuLei">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="LouieLiu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="LouieLiu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/25/开篇/" itemprop="url">
-                  开篇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T10:49:49+08:00">
-                2017-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/25/开篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/25/开篇/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <blockquote><p>Always do your best. What you plant now, you will harvest later.</p>
-</blockquote>
-<p> &emsp;&emsp;一直以来都想着说把平时学习中遇到的琐碎的知识整理起来  因为自己太懒 一直在划水 没有好好整理过 结果就是东一榔头西一棒子 结果到现在 以前乱七八糟整理的东西又找不到了 之前弄懂的东西 又忘了 真的是 够呛 之前也偶尔折腾过hexo 但是一直部署不成功 昨天因为在segmentfault翻阅别人文章时 又想折腾了 才真正搭建好 花了好久的时间啊可是 要好好利用一番呀啊 新年啦 该给自己立个flag了 2017年了 一切都重新开始了 不论是糟糕的感情 还是低落的生活状态 都该有所变化了</p>
-<ul>
-<li>好好记笔记 不要那么懒了  </li>
-<li>改变原有的生活状态&emsp;ps:从寒假开始到现在在做什么 就不说了</li>
-<li>多敲代码多思考 &emsp;ps:不到半年就校招了 现在还是弱爆了</li>
-<li>给自己点自信 </li>
-</ul>
-<p>&emsp;&emsp;大概就这些了 嗯 努力吧 </p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/25/开篇/" rel="next" title="开篇">
+                <i class="fa fa-chevron-left"></i> 开篇
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -536,6 +420,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/26/关于数组去重/"
+           data-title="关于数组去重" data-url="http://yoursite.com/2017/01/26/关于数组去重/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -555,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -643,6 +544,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -749,6 +666,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
