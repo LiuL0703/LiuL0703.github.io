@@ -359,6 +359,7 @@
 <p>或者<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">	<span class="comment">//省略上述代码</span></div><div class="line">	a = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">ele,index,array</span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> array.indexOf(ele) === index;</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>此方法的时间复杂度为O(n²);</p>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>若不考虑数组输出顺序 可以使用sort()先排序后过滤的方法；使用sort()排序后数组中相同元素会在相邻位置只需要比较相邻位置的值是否相等就可以做出判断 大致实现方法如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">	<span class="comment">//省略上述代码</span></div><div class="line">	a = a.sort().filter(<span class="function"><span class="keyword">function</span>(<span class="params">ele,index,array</span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> ele!==array[index - <span class="number">1</span>];</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###方法三<br>上述两种方法都针对数组a中无其他类型元素做出的处理 若数组中加入字符串等其他元素 则会出现问题 具体实现方法思路如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_diff</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">	<span class="comment">//省略上述代码</span></div><div class="line">	<span class="comment">//具体方法待补充</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
           
         
@@ -580,7 +581,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
