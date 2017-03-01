@@ -1,0 +1,783 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;最近在做IFE的任务，其中一个任务是利用CSS3实现3D轮播图 简单来说就是利用css3中transform属性中的rotateY实现轮播图的角度偏转 利用translateZ()让图片沿Z轴平移 利用transform-style: preserve-3d 实现3D效果 用persepective展现出3D视距 然后利用animation属性实现转动 接下来仔细说说这个过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3与3D轮转(一)">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/CSS3与3D轮转(一)/index.html">
+<meta property="og:site_name" content="LouieLiu">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;最近在做IFE的任务，其中一个任务是利用CSS3实现3D轮播图 简单来说就是利用css3中transform属性中的rotateY实现轮播图的角度偏转 利用translateZ()让图片沿Z轴平移 利用transform-style: preserve-3d 实现3D效果 用persepective展现出3D视距 然后利用animation属性实现转动 接下来仔细说说这个过">
+<meta property="og:image" content="http://yoursite.com/image/3D.gif">
+<meta property="og:image" content="http://yoursite.com/image/xyz.png">
+<meta property="og:image" content="http://yoursite.com/image/translateorigin.png">
+<meta property="og:image" content="http://yoursite.com/image/translatexy.png">
+<meta property="og:image" content="http://yoursite.com/image/translatex.png">
+<meta property="og:image" content="http://yoursite.com/image/translatey.png">
+<meta property="og:image" content="http://yoursite.com/image/rotate.png">
+<meta property="og:image" content="http://yoursite.com/image/scalexy.png">
+<meta property="og:image" content="http://yoursite.com/image/scalex.png">
+<meta property="og:image" content="http://yoursite.com/image/scaley.png">
+<meta property="og:image" content="http://yoursite.com/image/skewxy.png">
+<meta property="og:image" content="http://yoursite.com/image/skewx.png">
+<meta property="og:image" content="http://yoursite.com/image/skewy.png">
+<meta property="og:image" content="http://yoursite.com/image/rotateX.png">
+<meta property="og:image" content="http://yoursite.com/image/rotateY.png">
+<meta property="og:image" content="http://yoursite.com/image/rotateZ.png">
+<meta property="og:image" content="http://yoursite.com/image/rotateYimg.png">
+<meta property="og:image" content="http://yoursite.com/image/unanimationimg.png">
+<meta property="og:updated_time" content="2017-03-01T10:04:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3与3D轮转(一)">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近在做IFE的任务，其中一个任务是利用CSS3实现3D轮播图 简单来说就是利用css3中transform属性中的rotateY实现轮播图的角度偏转 利用translateZ()让图片沿Z轴平移 利用transform-style: preserve-3d 实现3D效果 用persepective展现出3D视距 然后利用animation属性实现转动 接下来仔细说说这个过">
+<meta name="twitter:image" content="http://yoursite.com/image/3D.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/CSS3与3D轮转(一)/"/>
+
+
+
+
+
+  <title> CSS3与3D轮转(一) | LouieLiu </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60546079";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">LouieLiu</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/CSS3与3D轮转(一)/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="LiuLei">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="LouieLiu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="LouieLiu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS3与3D轮转(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T23:43:32+08:00">
+                2017-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/28/CSS3与3D轮转(一)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/CSS3与3D轮转(一)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;最近在做IFE的任务，其中一个任务是利用CSS3实现3D轮播图 简单来说就是利用css3中transform属性中的rotateY实现轮播图的角度偏转 利用translateZ()让图片沿Z轴平移 利用transform-style: preserve-3d 实现3D效果 用persepective展现出3D视距 然后利用animation属性实现转动 接下来仔细说说这个过程和其中涉及到的这几个CSS3的属性说之前先看一下最终效果</p>
+<p><img src="/image/3D.gif" width="700px"><br><a id="more"></a></p>
+<h2 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h2><p>好了那么先来看看MDN中怎么解释这个属性<br><blockquote><p>CSS中transform 属性允许你修改CSS可视化模型的坐标空间。通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew）如果该属性有一个非none值, 将会产生一个层叠上下文. 在这种情况下 对象将作为它包含的 position: fixed 元素的包含块（a containing block）</p></blockquote></p>
+<br>(附：三维坐标)<br><img src="/image/xyz.png"><br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: none|&lt;transform-function&gt;[&lt;transform-function&gt;]</div></pre></td></tr></table></figure><p></p>
+<p>transform默认值是none 不进行变换 <transform-function>表示一个或者多个变换函数 用空格间隔 下面就几个常用的transform属性值进行介绍</transform-function></p>
+<h3 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h3><p>在说其他属性之前先说一下transform-origin属性 transform-origin属性是定义操作元素的基点 所有的transform属性对元素进行操作变换若无定义transform-origin 则默认操作是以元素中心为基点 如果需要改变基点的位置 可以通过设置transform-origin属性来完成 它的值可以为百分比 em px 也可以是left right top bottom center 其中 left,center right是水平方向取值，对应的百分值为left=0%;center=50%;right=100%而top center bottom是垂直方向的取值，其中top=0%;center=50%;bottom=100%;如果只取一个值，表示垂直方向值不变<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform-origin</span><span class="selector-pseudo">:0</span> 0;</div><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:rotate(30deg)</span>;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/translateorigin.png"></p>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p>[若不做特殊说明则以下默认transform-origin:50% 50%]</p>
+<h4 id="translate-平移"><a href="#translate-平移" class="headerlink" title="translate[平移]"></a>translate[平移]</h4><p>translate包含包含三种情况translateX() translateY() translate(x,y)</p>
+<h5 id="translate-x-y"><a href="#translate-x-y" class="headerlink" title="translate(x,y)"></a>translate(x,y)</h5><p>translate(x,y)它表示按照x y的值对元素进行平移操作 当值为负 反向移动 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translate(50px</span>,50<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="/image/translatexy.png"></p>
+<h5 id="translateX"><a href="#translateX" class="headerlink" title="translateX"></a>translateX</h5><p>translateX()通过给定一个值 使元素只向x轴(水平)方向移动 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translateX(50px)</span>;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/translatex.png"></p>
+<h5 id="translateY"><a href="#translateY" class="headerlink" title="translateY"></a>translateY</h5><p>translateY()通过给定一个值 使元素只向y轴(垂直)方向移动 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translateY(50px)</span>;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/translatey.png"></p>
+<h4 id="rotate-2D旋转"><a href="#rotate-2D旋转" class="headerlink" title="rotate[2D旋转]"></a>rotate[2D旋转]</h4><p>rotate(<angle>) 通过设置一个角度对指定元素进行2D旋转 角度为正则表示为按照顺时针方向旋转 角度为负则逆时针方向 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:rotate(30deg)</span>;</div></pre></td></tr></table></figure></angle></p>
+<p><img src="/image/rotate.png"></p>
+<h4 id="scale-缩放"><a href="#scale-缩放" class="headerlink" title="scale[缩放]"></a>scale[缩放]</h4><p>通过scale缩放元素与translate很像 其中scale(x,y)使元素水平方向与垂直方向同时缩放 scaleX()元素仅水平方向缩放 scaleY()仅竖直方向缩放 它们的缩放中心就是基点 可以通过改变translate-origin属性改变缩放中心位置 缩放基数为1 如果其值大于1 元素就放大 反之则元素缩小<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:scale(2</span>,1<span class="selector-class">.5</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="/image/scalexy.png"><br>使用scaleX()进行矢量缩放 scaleX表示元素只在x轴(水平)方向缩放元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:scaleX(1.5)</span>;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/scalex.png"><br>使用scaleY()进行矢量缩放 scaleY表示元素只在y轴(垂直)方向缩放元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:scaleY(1.5)</span>;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/scaley.png"></p>
+<h4 id="skew-倾斜"><a href="#skew-倾斜" class="headerlink" title="skew[倾斜]"></a>skew[倾斜]</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">skew</span>(<span class="selector-tag">ax</span><span class="selector-attr">[, ay]</span>)  <span class="comment">/* one or two &lt;angle&gt;s, e.g.  skew(30deg,20deg) */</span></div></pre></td></tr></table></figure>
+<p>元素在x轴和Y轴方向上以指定角度倾斜 如果ay未提供 则在Y轴上没有倾斜 同样元素中心为默认基点 例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">skew</span>(30<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);</div></pre></td></tr></table></figure>
+<p><img src="/image/skewxy.png"></p>
+<p>skewX(<angle>): 按给定的角度沿X轴指定一个skew transformation（斜切变换）并在水平方向(X轴)倾斜<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: skewX(30deg);</div></pre></td></tr></table></figure></angle></p>
+<p><img src="/image/skewx.png"><br>skewY(<angle>): 按给定的角度沿Y轴倾斜<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: skewY(20deg);</div></pre></td></tr></table></figure></angle></p>
+<p><img src="/image/skewy.png"></p>
+<h4 id="matrix-矩阵"><a href="#matrix-矩阵" class="headerlink" title="matrix[矩阵]"></a>matrix[矩阵]</h4><h3 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">translate-style:flat|preserve-3d;</div><div class="line">transform-style:flat;/*默认值  指定子元素位于此元素所在平面内*/</div><div class="line">transform-style:preserve-3d;  /* 指定子元素定位在三维空间内 */</div></pre></td></tr></table></figure>
+<blockquote><p>transform-style属性指定了，该元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化。如果被扁平化即所选值为flat，则子元素不会独立的存在于三维空间。因为该属性不会被（自动）继承，所以必须为元素所有非叶后代节点设置该属性 若所选值为preserve-3d则指定子元素将在三维空间内显示</p>
+</blockquote>
+<p>当为一个容器设定了transform-style的属性值为preserve-3d 则容器的后代元素将以3D效果呈现 也就是说相对于容器本身可以对其子元素做3D变形操作 3D变形与2D类似 多出来对空间坐标Z的操作</p>
+<h4 id="translate-3D位移"><a href="#translate-3D位移" class="headerlink" title="translate[3D位移]"></a>translate[3D位移]</h4><p>可以使用translate3d(x,y,z)进行3D位移操作也可以分为translateX(<length>) translateY(<length>) translateZ(<length>) </length></length></length></p>
+<h4 id="rotate-3D旋转"><a href="#rotate-3D旋转" class="headerlink" title="rotate[3D旋转]"></a>rotate[3D旋转]</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rotate3d(&lt;X-angle&gt;,&lt;Y-angle&gt;,&lt;Z-angle&gt;);</div><div class="line">rotateX(&lt;angle&gt;);</div><div class="line">rotateY(&lt;angle&gt;);</div><div class="line">rotateZ(&lt;angle&gt;);</div></pre></td></tr></table></figure>
+<p>rotateX()旋转方式如图：<br><img src="/image/rotateX.png"><br>rotateY()旋转方式如图：<br><img src="/image/rotateY.png"><br>rotateZ() 旋转方式如图：<br><img src="/image/rotateZ.png"></p>
+<h4 id="scale"><a href="#scale" class="headerlink" title="scale"></a>scale</h4><p>分别为scaleX() scaleY() scaleZ() 或者scale3d(x,y,z) 与2D操作没什么太大区别</p>
+<h2 id="persepective"><a href="#persepective" class="headerlink" title="persepective"></a>persepective</h2><blockquote><p>perspective 属性指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。z&gt;0的三维元素比正常大，而z&lt;0时则比正常小，大小程度由该属性的值决定</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prespective:number|none; /* 指定观察者距离z=0平面的距离，为元素及其内容应用透视变换。当值为0或负值时，无透视变换 */</div></pre></td></tr></table></figure>
+<p>当未设置prespective时[即值为none/0]元素的所以子元素被压缩在同一个二维平面内 将不会呈现出3D透视效果 同时透视元素的基点默认为元素中点[即默认值 prespective-orgin:50% 50%] 可以通过prespective-origin属性设置不同的基点 persepective-orgin属性的取值用法与transform-orgin类似  需要特别注意的是 三维元素在观察者后面的部分不会绘出来，即z轴坐标值大于perspective属性值的部分 CSS3 3D变换中的透视的透视点是在浏览器的前方 所以在关于轮播图中要特别注意 设置perspective的值一定要大于z 否则无法观测完全</p>
+<h2 id="实现3D效果"><a href="#实现3D效果" class="headerlink" title="实现3D效果"></a>实现3D效果</h2><p> 首先要完成一个3D轮转需要给其提供一个用于展示的平台姑且叫它“舞台”我们还需要容器来承载这个轮转的任务 接下来就把图片放入到这个容器中就行了 所以整体HTML框架是这样的<br> -舞台<br>– 容器<br>—– 图片<br>—– 图片<br>—– 图片<br>—– …<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"stage"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">	    	<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"img item1"</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span></div><div class="line">	    	<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"img item2"</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span></div><div class="line">                    ...</div><div class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"img item9"</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span>        </div><div class="line">	    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>我们给容器(container)添加transform-style属性给舞台一个perspective距离 使其子元素可以以3D形式展示同时设置基点为其中心<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#stage&#123;</div><div class="line">    persepective:900px;</div><div class="line">&#125;</div><div class="line">#container&#123;</div><div class="line">    transform-style: preserve-3d;</div><div class="line">    perspective-origin: 50% 50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后给所有的img一个绝对定位 因为3D旋转主要是绕Y轴运动 所以设置rotateYd的大小就好 根据个人添加image的数量  平分整个圆周角 设置每个img的rotateY所旋转的角度 即让所以照片旋转一定的角度依次散开 可以围成一圈 现在是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.img &#123;</div><div class="line">    position:absolate;</div><div class="line">&#125;</div><div class="line">.item1&#123;</div><div class="line">    -moz-transition:rotateY(0deg);</div><div class="line">    -webkit-transform:rotateY(0deg);</div><div class="line">    -o-transform:rotateY(0deg);</div><div class="line">    transform: rotateY(0deg);</div><div class="line">&#125;</div><div class="line">.item2&#123;</div><div class="line">    -moz-transition:rotateY(40deg);</div><div class="line">    -webkit-transform:rotateY(40deg);</div><div class="line">    -o-transform:rotateY(40deg);</div><div class="line">    transform: rotateY(40deg);</div><div class="line">&#125;</div><div class="line">...</div><div class="line">.item9&#123;</div><div class="line">    -moz-transition:rotateY(320deg);</div><div class="line">    -webkit-transform:rotateY(320deg);</div><div class="line">    -o-transform:rotateY(320deg);</div><div class="line">    transform: rotateY(320deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/rotateYimg.png"><br>这些照片已经按照指定的角度偏转了 接下来要做的就是让它们以基点(也就是中点)为中心分散开 现在就到translateZ()大显身手的时候了 给每个image设定translateZ<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.item1&#123;</div><div class="line">    -moz-transition:rotateY(0deg) translateZ(350px);</div><div class="line">    -webkit-transform:rotateY(0deg) translateZ(350px);</div><div class="line">    -o-transform:rotateY(0deg) translateZ(350px);</div><div class="line">    transform: rotateY(0deg) translateZ(350px);</div><div class="line">&#125;</div><div class="line">.item2&#123;</div><div class="line">    -moz-transition:rotateY(40deg) translateZ(350px);</div><div class="line">    -webkit-transform:rotateY(40deg) translateZ(350px);</div><div class="line">    -o-transform:rotateY(40deg) translateZ(350px);</div><div class="line">    transform: rotateY(40deg) translateZ(350px);</div><div class="line">&#125;</div><div class="line">...</div><div class="line">.item9&#123;</div><div class="line">    -moz-transition:rotateY(320deg) translateZ(350px);</div><div class="line">    -webkit-transform:rotateY(320deg) translateZ(350px);</div><div class="line">    -o-transform:rotateY(320deg) translateZ(350px);</div><div class="line">    transform: rotateY(320deg) translateZ(350px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/image/unanimationimg.png" width="700px"><br>现在就差让它动起来了 当然animation属性可以完成这个任务 给包裹image的容器设置animation属性就可以了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/03/Template-Literals/" rel="next" title="Template Literals(模板字符串)">
+                <i class="fa fa-chevron-left"></i> Template Literals(模板字符串)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/28/CSS3与3D轮转(一)/"
+           data-title="CSS3与3D轮转(一)" data-url="http://yoursite.com/2017/02/28/CSS3与3D轮转(一)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="LiuLei" />
+          <p class="site-author-name" itemprop="name">LiuLei</p>
+          <p class="site-description motion-element" itemprop="description">Keep Going</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LiuL0703" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/louieliu_25" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/LouieLiu_25" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/liu-lei-70-79" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-transform"><span class="nav-number">1.</span> <span class="nav-text">CSS3 transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-origin"><span class="nav-number">1.1.</span> <span class="nav-text">transform-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">1.2.</span> <span class="nav-text">transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#translate-平移"><span class="nav-number">1.2.1.</span> <span class="nav-text">translate[平移]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#translate-x-y"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">translate(x,y)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#translateX"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">translateX</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#translateY"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">translateY</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rotate-2D旋转"><span class="nav-number">1.2.2.</span> <span class="nav-text">rotate[2D旋转]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scale-缩放"><span class="nav-number">1.2.3.</span> <span class="nav-text">scale[缩放]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#skew-倾斜"><span class="nav-number">1.2.4.</span> <span class="nav-text">skew[倾斜]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#matrix-矩阵"><span class="nav-number">1.2.5.</span> <span class="nav-text">matrix[矩阵]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-style"><span class="nav-number">1.3.</span> <span class="nav-text">transform-style</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#translate-3D位移"><span class="nav-number">1.3.1.</span> <span class="nav-text">translate[3D位移]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rotate-3D旋转"><span class="nav-number">1.3.2.</span> <span class="nav-text">rotate[3D旋转]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scale"><span class="nav-number">1.3.3.</span> <span class="nav-text">scale</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#persepective"><span class="nav-number">2.</span> <span class="nav-text">persepective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现3D效果"><span class="nav-number">3.</span> <span class="nav-text">实现3D效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiuLei</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liul0703"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
