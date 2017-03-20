@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://yoursite.com/image/rotateZ.png">
 <meta property="og:image" content="http://yoursite.com/image/rotateYimg.png">
 <meta property="og:image" content="http://yoursite.com/image/unanimationimg.png">
-<meta property="og:updated_time" content="2017-03-01T14:46:30.557Z">
+<meta property="og:updated_time" content="2017-03-20T03:14:17.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3与3D轮转(一)">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近在做IFE的任务，其中一个任务是利用CSS3实现3D轮播图 简单来说就是利用css3中transform属性中的rotateY实现轮播图的角度偏转 利用translateZ()让图片沿Z轴平移 利用transform-style: preserve-3d 实现3D效果 用persepective展现出3D视距 然后利用animation属性实现转动 接下来仔细说说这个过">
@@ -371,7 +371,7 @@
 <h3 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h3><p>在说其他属性之前先说一下transform-origin属性 transform-origin属性是定义操作元素的基点 所有的transform属性对元素进行操作变换若无定义transform-origin 则默认操作是以元素中心为基点 如果需要改变基点的位置 可以通过设置transform-origin属性来完成 它的值可以为百分比 em px 也可以是left right top bottom center 其中 left,center right是水平方向取值，对应的百分值为left=0%;center=50%;right=100%而top center bottom是垂直方向的取值，其中top=0%;center=50%;bottom=100%;如果只取一个值，表示垂直方向值不变<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform-origin</span><span class="selector-pseudo">:0</span> 0;</div><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:rotate(30deg)</span>;</div></pre></td></tr></table></figure></p>
 <p><img src="/image/translateorigin.png"></p>
 <h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p>[若不做特殊说明则以下默认transform-origin:50% 50%]</p>
-<h4 id="translate-平移"><a href="#translate-平移" class="headerlink" title="translate[平移]"></a>translate[平移]</h4><p>translate包含包含三种情况translateX() translateY() translate(x,y)</p>
+<h4 id="translate-平移"><a href="#translate-平移" class="headerlink" title="translate[平移]"></a>translate[平移]</h4><p>translate包含包含三种情况translateX() translateY() translate(x,y)<br><b>注：若给定的值是百分比则以自身的width和height作为基准</b></p>
 <h5 id="translate-x-y"><a href="#translate-x-y" class="headerlink" title="translate(x,y)"></a>translate(x,y)</h5><p>translate(x,y)它表示按照x y的值对元素进行平移操作 当值为负 反向移动 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translate(50px</span>,50<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure></p>
 <p><img src="/image/translatexy.png"></p>
 <h5 id="translateX"><a href="#translateX" class="headerlink" title="translateX"></a>translateX</h5><p>translateX()通过给定一个值 使元素只向x轴(水平)方向移动 例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translateX(50px)</span>;</div></pre></td></tr></table></figure></p>
