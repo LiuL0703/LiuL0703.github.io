@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/image/BFC07.png">
 <meta property="og:image" content="http://yoursite.com/image/BFC08.png">
 <meta property="og:image" content="http://yoursite.com/image/BFC09.png">
-<meta property="og:updated_time" content="2017-03-20T13:25:30.570Z">
+<meta property="og:updated_time" content="2017-03-20T14:23:40.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于BFC的总结">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;关于BFC平时用的也挺多的 只是之前一直没有总结过 这次就整理一下
@@ -360,6 +360,7 @@
         <p>&emsp;&emsp;关于BFC平时用的也挺多的 只是之前一直没有总结过 这次就整理一下</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>BFC(Block Formatting Context )中文意思就是 块级格式上下文的意思 w3c的定义是<br><blockquote><p>Floats, absolutely positioned elements, inline-blocks, table-cells, table-captions, and elements with ‘overflow’ other than ‘visible’ (except when that value has been propagated to the viewport) <b>establish new block formatting contexts</b>.</p>
 </blockquote><br>从上面就能知道 浮动元素和绝对定位元素 以及非块级的盒子块级容器( inline-block table-cells table-captions )以及 overflow值不是visible 的元素 都会创建一个新的块级上下文<br>BFC 是一个独立的渲染区域 只有block-level-box级别参与 外部布局无法影响内部布局  </p>
+<a id="more"></a>
 <h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>如上所述 总结如下 这些状况 可以创建一个BFC</p>
 <ul>
 <li>float元素的值不为 none 的元素</li>
@@ -367,7 +368,6 @@
 <li>display值为table-cells table-caption inline-block 的元素</li>
 <li>overflow 值不为visible的元素</li>
 </ul>
-<a id="more"></a>
 <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
 <li>BFC的区域不会与float box叠加</li>
 <li>BFC就是页面上一个隔离的独立容器 容器里面的子元素不会影响到外面的元素 反之亦然</li>
