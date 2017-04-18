@@ -322,7 +322,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/20/关于BFC的总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/关于BFC的总结/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/20/关于BFC的总结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -457,7 +457,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/01/CSS3与3D轮转(二)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/CSS3与3D轮转(二)/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/01/CSS3与3D轮转(二)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -592,7 +592,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/02/28/CSS3与3D轮转(一)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/CSS3与3D轮转(一)/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/28/CSS3与3D轮转(一)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -726,7 +726,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/02/03/Template-Literals/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/03/Template-Literals/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/Template-Literals/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -861,7 +861,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/01/26/关于数组去重/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/关于数组去重/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/26/关于数组去重/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1162,27 +1162,31 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"liul0703"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'liul0703';
+      var disqus_identifier = 'index.html';
+
+      var disqus_title = "";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+
+    </script>
+  
 
 
 
