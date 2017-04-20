@@ -98,7 +98,7 @@ require() 返回的是module.exports">
 module对象会创建一个叫exports的属性并 初始化为{} 
 exports是指向module.exports的引用 
 require() 返回的是module.exports">
-<meta property="og:updated_time" content="2017-04-20T11:23:09.131Z">
+<meta property="og:updated_time" content="2017-04-20T11:25:47.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Module.exports与exports">
 <meta name="twitter:description" content="​    在Node.js中require 是用来加载代码的 与之相对的exports和module.exports是用来导出代码的 每一个Node执行文件都会自动创建一个module对象  我们需要知道    
@@ -364,6 +364,7 @@ require() 返回的是module.exports">
 </ul>
 <p>用一个简单的例子来类比module.exports与exports的关系：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">num</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">var</span> bar = foo;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"></div><div class="line">bar.num = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"></div><div class="line">bar = &#123;<span class="attr">num</span>:<span class="number">3</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>运行结果：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">3</span>&#125;</div></pre></td></tr></table></figure>
 <p>很容易理解foo是一个对象 bar是指向foo的引用 foo和bar指向同一块内存 所以当bar改变时即内存中的内容发生改变 所以foo也随之改变  随后改变bar的指向bar开始指向另一块内存所以当bar再次改变时 foo就不会改变 所以最终结果不同 与之相对的 另一个例子：</p>

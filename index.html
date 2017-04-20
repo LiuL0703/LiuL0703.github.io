@@ -349,8 +349,7 @@
 
       
         
-          
-            <p>​    在Node.js中require 是用来加载代码的 与之相对的exports和module.exports是用来导出代码的 每一个Node执行文件都会自动创建一个module对象  我们需要知道    </p>
+          <p>​    在Node.js中require 是用来加载代码的 与之相对的exports和module.exports是用来导出代码的 每一个Node执行文件都会自动创建一个module对象  我们需要知道    </p>
 <ul>
 <li>module对象会创建一个叫exports的属性并 初始化为{} </li>
 <li>exports是指向module.exports的引用 </li>
@@ -358,34 +357,13 @@
 </ul>
 <p>用一个简单的例子来类比module.exports与exports的关系：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">num</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">var</span> bar = foo;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"></div><div class="line">bar.num = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"></div><div class="line">bar = &#123;<span class="attr">num</span>:<span class="number">3</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="built_in">console</span>.log(bar);</div></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">Object</span> &#123;<span class="attr">num</span>: <span class="number">3</span>&#125;</div></pre></td></tr></table></figure>
-<p>很容易理解foo是一个对象 bar是指向foo的引用 foo和bar指向同一块内存 所以当bar改变时即内存中的内容发生改变 所以foo也随之改变  随后改变bar的指向bar开始指向另一块内存所以当bar再次改变时 foo就不会改变 所以最终结果不同 与之相对的 另一个例子：</p>
-<p>foo.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">exports.foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.foo = <span class="number">2</span>;</div></pre></td></tr></table></figure>
-<p>bar.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="built_in">require</span>(<span class="string">'./foo'</span>);</div><div class="line"><span class="built_in">console</span>.log(bar.foo)</div></pre></td></tr></table></figure>
-<p>运行bar.js 结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2</div></pre></td></tr></table></figure>
-<p>改变foo.js 如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">exports.foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;<span class="attr">foo</span>:<span class="number">3</span>&#125;;</div><div class="line">exports.foo = <span class="number">2</span>;</div></pre></td></tr></table></figure>
-<p>再次运行bar.js 结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3</div></pre></td></tr></table></figure>
-<p>到这里 我们可以很清楚的看到     exports是指向module.exports的引用  在module.exports被改变时exports没变  require() 返回的是module.exports   所以真正执行的是module.exports 所以在bar.js中输出的是3 </p>
-<p>经常可以看到如下的使用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exports = module.exports = somethings</div></pre></td></tr></table></figure>
-<p>它等价于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = someting;</div><div class="line">exports = <span class="built_in">module</span>.exports;</div></pre></td></tr></table></figure>
-<p>即当module.exports的指向发生改变后 exports会断开与module.exports的引用 让exports=module.exports 可以让exports重新绑定module.exports </p>
-<p>另外 module.exports 可以导出整个对象 在外部模块调用时 不能调用对象的私有方法 即prototype创建的方法不能被调用 例如：</p>
-<p>foo.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"foo"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.prototype.a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'a'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'b'</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = foo;</div></pre></td></tr></table></figure>
-<p>bar.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="built_in">require</span>(<span class="string">'./foo'</span>);</div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"><span class="built_in">console</span>.log(bar.a);</div><div class="line"><span class="built_in">console</span>.log(bar.b);</div><div class="line">bar.b();</div></pre></td></tr></table></figure>
-<p>结果如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;[<span class="built_in">Function</span>: foo] b: [<span class="built_in">Function</span>]&#125;</div><div class="line"><span class="literal">undefined</span></div><div class="line">[<span class="built_in">Function</span>]</div><div class="line">b</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/关于Module-exports与exports/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
