@@ -86,24 +86,24 @@
 
 <meta name="description" content="浅复制
 关于普通数组或者对象的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
-123456var a =">
+因为a和b指向同一个块内存 所以会修改b会影响a
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于JS的深浅拷贝">
 <meta property="og:url" content="http://yoursite.com/2017/04/26/关于JS的深浅拷贝/index.html">
 <meta property="og:site_name" content="LouieLiu">
 <meta property="og:description" content="浅复制
 关于普通数组或者对象的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
-123456var a =">
+因为a和b指向同一个块内存 所以会修改b会影响a
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [">
 <meta property="og:image" content="http://yoursite.com/image/ArrayCopy.png">
-<meta property="og:updated_time" content="2017-05-02T12:14:51.125Z">
+<meta property="og:updated_time" content="2017-05-02T12:17:26.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于JS的深浅拷贝">
 <meta name="twitter:description" content="浅复制
 关于普通数组或者对象的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
-123456var a =">
+因为a和b指向同一个块内存 所以会修改b会影响a
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [">
 <meta name="twitter:image" content="http://yoursite.com/image/ArrayCopy.png">
 
 
@@ -357,12 +357,10 @@
       
         <h3 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h3><ul>
 <li><p>关于普通数组或者对象的复制最简单的方式就是直接赋值 </p>
+<p>因为a和b指向同一个块内存 所以会修改b会影响a</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt;[1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">key</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a===b) <span class="comment">// =&gt; true</span></div><div class="line">b.key = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(a.key) <span class="comment">// =&gt; 2</span></div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>  因为a和b指向同一个块内存 所以会修改b会影响a</p>
-<ul>
 <li><p>另一种直接的方法就是利用循环</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> a)&#123;</div><div class="line">  b[i] = a[i];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -371,8 +369,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a.slice();</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">"key"</span>,&#123;<span class="attr">count</span>:<span class="number">1</span>&#125;];</div><div class="line"><span class="keyword">var</span> b = a.slice();  <span class="comment">// 返回一个a的浅拷贝对象</span></div><div class="line">a==b  <span class="comment">// =&gt; false   b是a的一个实例</span></div><div class="line">b[<span class="number">0</span>] = <span class="string">"game"</span>;</div><div class="line"><span class="built_in">console</span>.log(a[<span class="number">0</span>]); <span class="comment">// =&gt;"key"  a和b中的基本类型值 复制的为副本 不会相互影响</span></div><div class="line">b[<span class="number">1</span>].count = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(a[<span class="number">1</span>].count)  <span class="comment">// =&gt; 2  a和b中的引用类型值 指向相同</span></div></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p>利用Object.assign()</p>
 <p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span>,</div><div class="line">  <span class="attr">b</span>:&#123;</div><div class="line">    <span class="attr">f</span>:&#123;</div><div class="line">      <span class="attr">g</span>:<span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">c</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> y = <span class="built_in">Object</span>.assign(&#123;&#125;,x);</div><div class="line"><span class="built_in">console</span>.log(y.b.f===x.b.f) <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
