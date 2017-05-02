@@ -85,37 +85,25 @@
 
 
 <meta name="description" content="浅复制
-关于普通数组的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  //[1,2,3,4]b.push(5);  console.log(a);  //[1,2,3,4,5]console.log(b);  //[1,2,3,4,5]
-a和b指向同一个数组 所以会修改b会影响a
-
-
-
-另一种直接的方法就是利用循">
+关于普通数组或者对象的复制最简单的方式就是直接赋值 
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
+123456var a =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于JS的数组复制">
+<meta property="og:title" content="关于JS的深浅拷贝">
 <meta property="og:url" content="http://yoursite.com/2017/04/26/关于JS的深浅拷贝/index.html">
 <meta property="og:site_name" content="LouieLiu">
 <meta property="og:description" content="浅复制
-关于普通数组的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  //[1,2,3,4]b.push(5);  console.log(a);  //[1,2,3,4,5]console.log(b);  //[1,2,3,4,5]
-a和b指向同一个数组 所以会修改b会影响a
-
-
-
-另一种直接的方法就是利用循">
+关于普通数组或者对象的复制最简单的方式就是直接赋值 
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
+123456var a =">
 <meta property="og:image" content="http://yoursite.com/image/ArrayCopy.png">
-<meta property="og:updated_time" content="2017-05-02T11:47:38.661Z">
+<meta property="og:updated_time" content="2017-05-02T12:13:18.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于JS的数组复制">
+<meta name="twitter:title" content="关于JS的深浅拷贝">
 <meta name="twitter:description" content="浅复制
-关于普通数组的复制最简单的方式就是直接赋值 
-123456var a = [1,2,3,4];var b = a;console.log(b);  //[1,2,3,4]b.push(5);  console.log(a);  //[1,2,3,4,5]console.log(b);  //[1,2,3,4,5]
-a和b指向同一个数组 所以会修改b会影响a
-
-
-
-另一种直接的方法就是利用循">
+关于普通数组或者对象的复制最简单的方式就是直接赋值 
+123456var a = [1,2,3,4];var b = a;console.log(b);  // =&amp;gt;[1,2,3,4]b.push(5);  console.log(a);  // =&amp;gt; [1,2,3,4,5]console.log(b);  // =&amp;gt; [1,2,3,4,5]
+123456var a =">
 <meta name="twitter:image" content="http://yoursite.com/image/ArrayCopy.png">
 
 
@@ -150,7 +138,7 @@ a和b指向同一个数组 所以会修改b会影响a
 
 
 
-  <title> 关于JS的数组复制 | LouieLiu </title>
+  <title> 关于JS的深浅拷贝 | LouieLiu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +294,7 @@ a和b指向同一个数组 所以会修改b会影响a
             
             
               
-                关于JS的数组复制
+                关于JS的深浅拷贝
               
             
           </h1>
@@ -368,37 +356,43 @@ a和b指向同一个数组 所以会修改b会影响a
 
       
         <h3 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h3><ul>
-<li><p>关于普通数组的复制最简单的方式就是直接赋值 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,2,3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4,5]</span></div></pre></td></tr></table></figure>
-<p>a和b指向同一个数组 所以会修改b会影响a</p>
+<li><p>关于普通数组或者对象的复制最简单的方式就是直接赋值 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt;[1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">key</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a===b) <span class="comment">// =&gt; true</span></div><div class="line">b.key = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(a.key) <span class="comment">// =&gt; 2</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  因为a和b指向同一个块内存 所以会修改b会影响a</p>
+<ul>
+<li><p>另一种直接的方法就是利用循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> a)&#123;</div><div class="line">  b[i] = a[i];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>利用slice属性和concat属性可以完成数组或对象的浅拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a.slice();</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; [1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// =&gt; [1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">"key"</span>,&#123;<span class="attr">count</span>:<span class="number">1</span>&#125;];</div><div class="line"><span class="keyword">var</span> b = a.slice();  <span class="comment">// 返回一个a的浅拷贝对象</span></div><div class="line">a==b  <span class="comment">// =&gt; false   b是a的一个实例</span></div><div class="line">b[<span class="number">0</span>] = <span class="string">"game"</span>;</div><div class="line"><span class="built_in">console</span>.log(a[<span class="number">0</span>]); <span class="comment">// =&gt;"key"  a和b中的基本类型值 复制的为副本 不会相互影响</span></div><div class="line">b[<span class="number">1</span>].count = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(a[<span class="number">1</span>].count)  <span class="comment">// =&gt; 2  a和b中的引用类型值 指向相同</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
-<li><p>另一种直接的方法就是利用循环</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> a)&#123;</div><div class="line">  b[i] = a[i];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4,5]</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-<li><p>利用slice属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> b = a.slice();</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4]</span></div><div class="line">b.push(<span class="number">5</span>);  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//[1,2,3,4,5]</span></div></pre></td></tr></table></figure>
-</li>
 <li><p>利用Object.assign()</p>
 <p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span>,</div><div class="line">  <span class="attr">b</span>:&#123;</div><div class="line">    <span class="attr">f</span>:&#123;</div><div class="line">      <span class="attr">g</span>:<span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">c</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> y = <span class="built_in">Object</span>.assign(&#123;&#125;,x);</div><div class="line"><span class="built_in">console</span>.log(y.b.f===x.b.f) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span>,</div><div class="line">  <span class="attr">b</span>:&#123;</div><div class="line">    <span class="attr">f</span>:&#123;</div><div class="line">      <span class="attr">g</span>:<span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">c</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> y = <span class="built_in">Object</span>.assign(&#123;&#125;,x);</div><div class="line"><span class="built_in">console</span>.log(y.b.f===x.b.f) <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
-<li><p>关于对象的浅复制</p>
+<li><p>实现一个关于对象的浅复制 </p>
+<p>在使用浅拷贝时如果改变子对象 并且属性恰好为一个对象 那么也自然会修改原对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowCopy</span>(<span class="params">p,c</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> i;</div><div class="line">  c = c||&#123;&#125;;</div><div class="line">  <span class="keyword">for</span>(i <span class="keyword">in</span> p)&#123;</div><div class="line">    <span class="keyword">if</span>(p.hasOwnProperty(i))&#123;</div><div class="line">      c[i] = p[i];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid = shallowCopy(dad);</div><div class="line">kid.count.push(<span class="number">4</span>);   </div><div class="line">kid.count.toString(); <span class="comment">// "1,2,3,4"</span></div><div class="line">dad.count.toString(); <span class="comment">// "1,2,3,4"</span></div><div class="line">dad.game === kid.game;    <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid = shallowCopy(dad);</div><div class="line">kid.count.push(<span class="number">4</span>);   </div><div class="line">kid.count.toString(); <span class="comment">// =&gt; "1,2,3,4"</span></div><div class="line">dad.count.toString(); <span class="comment">// =&gt; "1,2,3,4"</span></div><div class="line">dad.game === kid.game;    <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ul>
 <h3 id="深复制"><a href="#深复制" class="headerlink" title="深复制"></a>深复制</h3><ul>
-<li><p>关于对象的深度复制 可实现继承</p>
+<li><p>关于对象的深度复制 可实现继承 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">p,c</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> i;</div><div class="line">  c = c||&#123;&#125;;</div><div class="line">  <span class="keyword">for</span>(i <span class="keyword">in</span> p)&#123;</div><div class="line">    <span class="keyword">if</span>(p.hasOwnProperty(i))&#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> p[i]===<span class="string">"object"</span>)&#123;</div><div class="line">        c[i] = <span class="built_in">Array</span>.isArray(p[i])?[]:&#123;&#125;;</div><div class="line">        deepCopy(p][i],c[i]);</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        c[i] = p[i];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid = deepCopy(dad);</div><div class="line"></div><div class="line">kid.count.push(<span class="number">4</span>);</div><div class="line">kid.count.toString(); <span class="comment">// "1,2,3,4"</span></div><div class="line">dad.count.toString();  <span class="comment">// "1,2,3"</span></div><div class="line">dad.game === kid.game;  <span class="comment">// false</span></div><div class="line">kid.game.Inside = <span class="literal">false</span>;</div><div class="line">kid.game.Limbo = <span class="literal">true</span>;</div><div class="line">dad.game.Inside;   <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>上述代码在复制时会进行类型检查 如果复制对象为一个数组或者对象会递归的遍历属性对象并将属性元素复制出来 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid = deepCopy(dad);</div><div class="line"></div><div class="line">kid.count.push(<span class="number">4</span>);</div><div class="line">kid.count.toString(); <span class="comment">// =&gt; "1,2,3,4"</span></div><div class="line">dad.count.toString();  <span class="comment">// =&gt; "1,2,3"</span></div><div class="line">dad.game === kid.game;  <span class="comment">// =&gt; false</span></div><div class="line">kid.game.Inside = <span class="literal">false</span>;</div><div class="line">kid.game.Limbo = <span class="literal">true</span>;</div><div class="line">dad.game.Inside;   <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>JSON对象的parse和stringify 也可实现深度复制</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid =<span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(dad));</div><div class="line">kid.count.push(<span class="number">4</span>);</div><div class="line">kid.count.toString(); <span class="comment">// "1,2,3,4"</span></div><div class="line">dad.count.toString();  <span class="comment">// "1,2,3"</span></div><div class="line">dad.game === kid.game;  <span class="comment">// false</span></div><div class="line">kid.game.Inside = <span class="literal">false</span>;</div><div class="line">kid.game.Limbo = <span class="literal">true</span>;</div><div class="line">dad.game.Inside;  <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<li><p>JSON对象的parse和stringify 也可实现深度复制<br>JOSN对象中的stringify可以把一个js对象序列化为一个JSON字符串，parse可以把JSON字符串反序列化为一个js对象 通过这两个方法 可以实现对象的深复制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dad = &#123;</div><div class="line">    <span class="attr">count</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</div><div class="line">    <span class="attr">game</span>:&#123;<span class="attr">Inside</span>:<span class="literal">true</span>&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> kid =<span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(dad));</div><div class="line">kid.count.push(<span class="number">4</span>);</div><div class="line">kid.count.toString(); <span class="comment">// =&gt; "1,2,3,4"</span></div><div class="line">dad.count.toString();  <span class="comment">// =&gt; "1,2,3"</span></div><div class="line">dad.game === kid.game;  <span class="comment">// =&gt; false</span></div><div class="line">kid.game.Inside = <span class="literal">false</span>;</div><div class="line">kid.game.Limbo = <span class="literal">true</span>;</div><div class="line">dad.game.Inside;  <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
 <p>​<img src="/image/ArrayCopy.png"></p>
 <p>​</p>
 </li>
@@ -738,7 +732,7 @@ a和b指向同一个数组 所以会修改b会影响a
       var disqus_shortname = 'https-liul0703-github-io';
       var disqus_identifier = '2017/04/26/关于JS的深浅拷贝/';
 
-      var disqus_title = "关于JS的数组复制";
+      var disqus_title = "关于JS的深浅拷贝";
 
 
       function run_disqus_script(disqus_script) {
