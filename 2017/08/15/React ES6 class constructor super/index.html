@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS3,CSS," />
+  <meta name="keywords" content="React," />
 
 
 
@@ -84,23 +84,31 @@
 
 
 
-<meta name="description" content="这里重点讨论一下CSS3中可以实现的动画效果的animation属性
-animationWeb 动画 API的动画接口表示一个单个动画播放器并且提供用于一个动画节点或源的回放控制和一个时间轴 animation属性在css3中可以用来动画化许多其他的css属性 比如color，background-color,height,width等 每个动画都需要使用@keyframes来定义规则 然后使用a">
+<meta name="description" content="当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：12345class MyClass extends React.Component&amp;#123;    constructor()&amp;#123;        super()    &amp;#125;&amp;#125;
+这里有两个问题：
+
+是否有必要在constructor中调用 super()函数？
+
+调用super()和supe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3与3D轮转(二)">
-<meta property="og:url" content="http://yoursite.com/2017/03/01/CSS3与3D轮转(二)/index.html">
+<meta property="og:title" content="React ES6 class constructor super">
+<meta property="og:url" content="http://yoursite.com/2017/08/15/React ES6 class constructor super/index.html">
 <meta property="og:site_name" content="LouieLiu">
-<meta property="og:description" content="这里重点讨论一下CSS3中可以实现的动画效果的animation属性
-animationWeb 动画 API的动画接口表示一个单个动画播放器并且提供用于一个动画节点或源的回放控制和一个时间轴 animation属性在css3中可以用来动画化许多其他的css属性 比如color，background-color,height,width等 每个动画都需要使用@keyframes来定义规则 然后使用a">
-<meta property="og:image" content="http://yoursite.com/image/ani.gif">
-<meta property="og:image" content="http://yoursite.com/image/anidetail.png">
-<meta property="og:image" content="http://yoursite.com/image/aniex.gif">
-<meta property="og:updated_time" content="2017-03-20T13:25:59.227Z">
+<meta property="og:description" content="当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：12345class MyClass extends React.Component&amp;#123;    constructor()&amp;#123;        super()    &amp;#125;&amp;#125;
+这里有两个问题：
+
+是否有必要在constructor中调用 super()函数？
+
+调用super()和supe">
+<meta property="og:updated_time" content="2017-08-15T07:26:53.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3与3D轮转(二)">
-<meta name="twitter:description" content="这里重点讨论一下CSS3中可以实现的动画效果的animation属性
-animationWeb 动画 API的动画接口表示一个单个动画播放器并且提供用于一个动画节点或源的回放控制和一个时间轴 animation属性在css3中可以用来动画化许多其他的css属性 比如color，background-color,height,width等 每个动画都需要使用@keyframes来定义规则 然后使用a">
-<meta name="twitter:image" content="http://yoursite.com/image/ani.gif">
+<meta name="twitter:title" content="React ES6 class constructor super">
+<meta name="twitter:description" content="当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：12345class MyClass extends React.Component&amp;#123;    constructor()&amp;#123;        super()    &amp;#125;&amp;#125;
+这里有两个问题：
+
+是否有必要在constructor中调用 super()函数？
+
+调用super()和supe">
 
 
 
@@ -128,13 +136,13 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/01/CSS3与3D轮转(二)/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/15/React ES6 class constructor super/"/>
 
 
 
 
 
-  <title> CSS3与3D轮转(二) | LouieLiu </title>
+  <title> React ES6 class constructor super | LouieLiu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +274,7 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/CSS3与3D轮转(二)/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/React ES6 class constructor super/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="LiuLei">
@@ -290,7 +298,7 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
             
             
               
-                CSS3与3D轮转(二)
+                React ES6 class constructor super
               
             
           </h1>
@@ -305,8 +313,8 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-01T18:17:40+08:00">
-                2017-03-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T15:02:48+08:00">
+                2017-08-15
               </time>
             
 
@@ -324,8 +332,8 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/01/CSS3与3D轮转(二)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/01/CSS3与3D轮转(二)/" itemprop="commentCount"></span>
+                <a href="/2017/08/15/React ES6 class constructor super/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/15/React ES6 class constructor super/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,7 +343,7 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
 
           
           
-             <span id="/2017/03/01/CSS3与3D轮转(二)/" class="leancloud_visitors" data-flag-title="CSS3与3D轮转(二)">
+             <span id="/2017/08/15/React ES6 class constructor super/" class="leancloud_visitors" data-flag-title="React ES6 class constructor super">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -362,27 +370,29 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
       
 
       
-        <p>这里重点讨论一下CSS3中可以实现的动画效果的animation属性</p>
-<h2 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h2><p>Web 动画 API的动画接口表示一个单个动画播放器并且提供用于一个动画节点或源的回放控制和一个时间轴 animation属性在css3中可以用来动画化许多其他的css属性 比如color，background-color,height,width等 每个动画都需要使用@keyframes来定义规则 然后使用animation属性调用比如这样：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ele</span>&#123;</div><div class="line">    <span class="attribute">animation</span>:changeColor <span class="number">6s</span> infinite;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> changeColor&#123;</div><div class="line">    0%&#123;</div><div class="line">       <span class="attribute">background</span>: <span class="number">#0e0</span>;</div><div class="line">    &#125;</div><div class="line">    100%&#123;</div><div class="line">       <span class="attribute">background</span>: <span class="number">#ff4</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里有两个问题：</p>
+<ol>
+<li><p>是否有必要在constructor中调用 super()函数？</p>
+</li>
+<li><p>调用super()和super(props) 有何区别 ?</p>
 <a id="more"></a>
-<p><img src="/image/ani.gif"><br>“keyframes” 也可以叫‘关键帧’ keyframes做什么呢 用来控制CSS动画的中间环节 来实现中间时间过渡段具体每一帧的动作 实现更多动画细节 keyframes有自己的语法规则 它的命名是以@keyframes 开始 后面紧跟着 自定义的动画名称 然后类似于css的写法加上花括号 内部就是对不同时段规定的不同样式 “@keyframes”的样式规则使用多个分段的百分比构成 每个分段需要有动画效果的元素加上不同的属性从而使元素达到一种不断在变化的效果 然后可以通过缩略动画属性或其子属性来控制这些关键帧，以便更好地控制应如何处理这些关键帧。 为了让一个关键帧列表有效，它必须至少包含了对0%（或from）和100%（或to）即动画的开头帧和结束帧的定义。 如果都没有进行定义，那么整个@keyframes 是无效的，不能使用</p>
-<h3 id="子属性"><a href="#子属性" class="headerlink" title="子属性"></a>子属性</h3><ul>
-<li>animation-name: 用来声明@keyframes的操作名称</li>
-<li>animation-duration: 完成一个元素播放周期所需时间 单位为 ‘s’(秒) </li>
-<li>animation-timing-function: 建立动画预设的加速度曲线 就是动画的播放方式 例如：easy[逐渐减慢] linear[匀速] ease-in[加速] ease-out[减速] ease-in-out[加速后减速] ease-in-out[减速后加速] cubic-bezier 允许自定义一个时间函数cubic-bezier(x1, y1, x2, y2)具体与transition-timing-function 一样 steps()步骤动画 规定几步完成 每步完成的时间(t)为总时间(T)/步骤(n) 分为start 和end 两种 start表示每步完成的时间的开始就已经运动了 end表示每步完成时间结束才运动 实例可参见<a href="https://github.com/LiuL0703/task/tree/master/Twitter-Like-Animation" target="_blank" rel="external">Twitter点赞效果css3实现</a></li>
-<li>animation-delay: 加载元素和动画序列开始之间的时间 </li>
-<li>animation-direction:设置循环后的动画的方向 默认值是在每个周期复位 动画每次循环都向前播放 即normal 另一个值为alternate 动画播放在第偶数次向前奇数次反向</li>
-<li>animation-iteration-count:动画应该执行的次数 infinite为无限次</li>
-<li>animation-fill-mood:设置动画之前/之后应用哪些值 比如你可以将动画的最后状态设置保留在屏幕上 或者将其设置为在动画开始是来回切换之前 如backwards 则默认应用第一帧样式 忽略delay；或为forwards 则在动画结束后 元素将应用动画结束后的属性值 如为both 则hi设置开始和结束的状态</li>
-<li>animation-play-state:暂停/播放 动画  paused/running</li>
-<li>animation属性可以自动触发 也可以通过状态增加class属性触发</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ele</span> &#123;</div><div class="line">  <span class="attribute">animation</span>:stretch <span class="number">1.5s</span> ease-out <span class="number">0s</span> alternate infinite none running;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> stretch&#123;</div><div class="line">    0%&#123;</div><div class="line">       <span class="attribute">transform</span>: <span class="built_in">scale</span>(.3);</div><div class="line">       <span class="attribute">background-color</span>: red;</div><div class="line">       <span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">    &#125;</div><div class="line">    50%&#123;</div><div class="line">		<span class="attribute">background-color</span>: <span class="number">#f0f</span>;</div><div class="line">    &#125;</div><div class="line">    100%&#123;</div><div class="line">    	<span class="attribute">transform</span>: <span class="built_in">scale</span>(2);</div><div class="line">       <span class="attribute">background</span>: <span class="number">#ff4</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>解释如图<br><img src="/image/anidetail.png"><br>上述代码效果如下：<br><img src="/image/aniex.gif"></p>
-<p>回到之前的话题 现在只需要利用animation属性设置一定的值就大功告成了 添加代码如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> #container&#123;</div><div class="line">    ...</div><div class="line">    -webkit-animation: cubeRotate 20s ease-in-out infinite 1s;</div><div class="line">	  animation: cubeRotate 20s ease-in-out infinite 1s;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes cubeRotate &#123;</div><div class="line">	  0% &#123;</div><div class="line">	    -webkit-transform: rotateY(0deg);</div><div class="line">	    transform: rotateY(0deg);</div><div class="line">	  &#125;</div><div class="line">	  11.1% &#123;</div><div class="line">	    -webkit-transform: rotateY(40deg);</div><div class="line">	    transform: rotateY(40deg);</div><div class="line">	  &#125;</div><div class="line">	  22.2% &#123;</div><div class="line">	    -webkit-transform: rotateY(80deg);</div><div class="line">	    transform: rotateY(80deg);</div><div class="line">	  </div><div class="line">      ...</div><div class="line"></div><div class="line">	  100% &#123;</div><div class="line">	    -webkit-transform: rotateY(360deg);</div><div class="line">	    transform: rotateY(360deg);</div><div class="line">	  &#125;</div></pre></td></tr></table></figure></p>
-<p>这样就大功告成 完整代码<a href="https://github.com/LiuL0703/IFE_Spring/blob/master/IFE2017/3D%E8%BD%AE%E6%92%AD/3D_Show.html" target="_blank" rel="external">Github</a> <a href="https://liul0703.github.io/IFE_Spring/IFE2017/3D%E8%BD%AE%E6%92%AD/3D_Show.html" target="_blank" rel="external">demo</a></p>
-<p>参考链接：<br><a href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank" rel="external">animation</a><br><a href="https://www.w3cplus.com/content/css3-animation" target="_blank" rel="external">CSS3 Animation</a><br><a href="https://www.w3.org/TR/css3-animations/" target="_blank" rel="external">CSS Animations</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Animation" target="_blank" rel="external">Animation</a><br><a href="http://imweb.io/topic/5643850eed18cc424277050e" target="_blank" rel="external">搞定这些疑难杂症，向css3动画说yes</a></p>
+</li>
+</ol>
+<p><strong>解答 Q1：</strong><br><blockquote><p>Always call super() if you have a constructor and don’t worry about it if you don’t have a constructor</p>
+</blockquote><br>只有当你有一个 constructor 时候调用super()才是必须的 看代码：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">    	<span class="keyword">return</span> &lt;div&gt;Hello &#123;this.props.world&#125;&lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上述代码完全符合规定所以你其实并没有必要去为你创建的每个React Component 调用super(),<br>话分两头 如果你的代码中有constrctor你就<strong>必须</strong>调用 super()</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//Error: 'this' is not allowed before super()</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>出现上述错误的原因是 super() 未被调用之前 this还未被初始化 (uninitialized) <a href="https://stackoverflow.com/questions/31067368/javascript-es6-class-extend-without-super/31079103#31079103" target="_blank" rel="external"> [更多] </a><br>或许聪敏的你会想着 使用一个空的constructor从而摆脱super()<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;&#125; <span class="comment">// Error: missing super() call in constructor</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>ES6的 class 的constructors如果属于子类就  必须调用 super() 方法 所以一旦你的代码有<br> constructor你就必须调用用super() </p>
+<p><strong>解答Q 2：</strong><br><blockquote><p>Call super(props) only if you want to access this.props inside the constructor. React automatically set it for you if you want to access it anywhere else.</p>
+</blockquote><br>假使你想获取到constructor中的this.props你就必须调用super(props) 然后React就会自动为你自动为你配置好它 以便你可以在随便什么地方调用它</p>
+<p>看一下使用super() 和 super(props)的不同 ：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props); <span class="comment">// this.props is undefined</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当使用super(props)时 你可以从constructor中获取到this.props<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props); <span class="comment">// prints out whatever is inside props</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然还有一点 当你想在其他地方使用它时 也没有必要将props传递到constructor中 React会自动为你设置好它 <a href="https://discuss.reactjs.org/t/should-we-include-the-props-parameter-to-class-constructors-when-declaring-components-using-es6-classes/2781/2" target="_blank" rel="external"> [更多] </a><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="comment">// There is no need to call `super(props)` or even having a constructor </span></div><div class="line">        <span class="comment">// this.props is automatically set for you by React </span></div><div class="line">        <span class="comment">// not just in render but another where else other than the constructor</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.props);  <span class="comment">// it works!</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我的理解是 总之 需要绑定 this. 方法或是需要在 constructor 使用操作 props 定义 state，就需要 constructor ，否则  例如在其他方法中（如 render()）使用 this.props 则没必要要使用 constructor </p>
+<p>原文链接：    <a href="http://cheng.logdown.com/posts/2016/03/26/683329" target="_blank" rel="external">React ES6 class constructor super()</a></p>
 
       
     </div>
@@ -406,9 +416,7 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
       
         <div class="post-tags">
           
-            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
-          
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
         </div>
       
@@ -417,8 +425,8 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/28/CSS3与3D轮转(一)/" rel="next" title="CSS3与3D轮转(一)">
-                <i class="fa fa-chevron-left"></i> CSS3与3D轮转(一)
+              <a href="/2017/04/26/关于JS的深浅拷贝/" rel="next" title="关于JS的深浅拷贝">
+                <i class="fa fa-chevron-left"></i> 关于JS的深浅拷贝
               </a>
             
           </div>
@@ -426,10 +434,6 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/20/关于BFC的总结/" rel="prev" title="关于BFC的总结">
-                关于BFC的总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,17 +487,8 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -580,22 +575,6 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#animation"><span class="nav-number">1.</span> <span class="nav-text">animation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子属性"><span class="nav-number">1.1.</span> <span class="nav-text">子属性</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
@@ -722,9 +701,9 @@ animationWeb 动画 API的动画接口表示一个单个动画播放器并且提
 
     <script type="text/javascript">
       var disqus_shortname = 'https-liul0703-github-io';
-      var disqus_identifier = '2017/03/01/CSS3与3D轮转(二)/';
+      var disqus_identifier = '2017/08/15/React ES6 class constructor super/';
 
-      var disqus_title = "CSS3与3D轮转(二)";
+      var disqus_title = "React ES6 class constructor super";
 
 
       function run_disqus_script(disqus_script) {
