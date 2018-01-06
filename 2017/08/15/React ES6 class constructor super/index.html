@@ -91,7 +91,7 @@
 
 调用super()和supe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React ES6 class constructor super">
+<meta property="og:title" content="React ES6 class constructor super[译]">
 <meta property="og:url" content="http://yoursite.com/2017/08/15/React ES6 class constructor super/index.html">
 <meta property="og:site_name" content="LouieLiu">
 <meta property="og:description" content="当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：12345class MyClass extends React.Component&amp;#123;    constructor()&amp;#123;        super()    &amp;#125;&amp;#125;
@@ -100,9 +100,9 @@
 是否有必要在constructor中调用 super()函数？
 
 调用super()和supe">
-<meta property="og:updated_time" content="2017-08-15T07:26:53.110Z">
+<meta property="og:updated_time" content="2017-08-15T07:27:17.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React ES6 class constructor super">
+<meta name="twitter:title" content="React ES6 class constructor super[译]">
 <meta name="twitter:description" content="当我们在写React时候 会用到ES6中的class语法 ,比较常见的情况如下：12345class MyClass extends React.Component&amp;#123;    constructor()&amp;#123;        super()    &amp;#125;&amp;#125;
 这里有两个问题：
 
@@ -142,7 +142,7 @@
 
 
 
-  <title> React ES6 class constructor super | LouieLiu </title>
+  <title> React ES6 class constructor super[译] | LouieLiu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
             
             
               
-                React ES6 class constructor super
+                React ES6 class constructor super[译]
               
             
           </h1>
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2017/08/15/React ES6 class constructor super/" class="leancloud_visitors" data-flag-title="React ES6 class constructor super">
+             <span id="/2017/08/15/React ES6 class constructor super/" class="leancloud_visitors" data-flag-title="React ES6 class constructor super[译]">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -380,7 +380,7 @@
 </li>
 </ol>
 <p><strong>解答 Q1：</strong><br><blockquote><p>Always call super() if you have a constructor and don’t worry about it if you don’t have a constructor</p>
-</blockquote><br>只有当你有一个 constructor 时候调用super()才是必须的 看代码：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">    	<span class="keyword">return</span> &lt;div&gt;Hello &#123;this.props.world&#125;&lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote><br>只有当你有一个 constructor 时候调用super()才是必须的 看代码：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.world&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上述代码完全符合规定所以你其实并没有必要去为你创建的每个React Component 调用super(),<br>话分两头 如果你的代码中有constrctor你就<strong>必须</strong>调用 super()</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//Error: 'this' is not allowed before super()</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>出现上述错误的原因是 super() 未被调用之前 this还未被初始化 (uninitialized) <a href="https://stackoverflow.com/questions/31067368/javascript-es6-class-extend-without-super/31079103#31079103" target="_blank" rel="external"> [更多] </a><br>或许聪敏的你会想着 使用一个空的constructor从而摆脱super()<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;&#125; <span class="comment">// Error: missing super() call in constructor</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -425,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/关于JS的深浅拷贝/" rel="next" title="关于JS的深浅拷贝">
-                <i class="fa fa-chevron-left"></i> 关于JS的深浅拷贝
+              <a href="/2017/07/04/函数节流与去抖/" rel="next" title="函数节流与去抖">
+                <i class="fa fa-chevron-left"></i> 函数节流与去抖
               </a>
             
           </div>
@@ -434,6 +434,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/06/迁移/" rel="prev" title="迁移">
+                迁移 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -501,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -589,8 +593,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -703,7 +707,7 @@
       var disqus_shortname = 'https-liul0703-github-io';
       var disqus_identifier = '2017/08/15/React ES6 class constructor super/';
 
-      var disqus_title = "React ES6 class constructor super";
+      var disqus_title = "React ES6 class constructor super[译]";
 
 
       function run_disqus_script(disqus_script) {
